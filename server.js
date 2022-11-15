@@ -1,19 +1,15 @@
 import roll from './lib/roll.js'
 import express from 'express'
 const app = express()
-const port = 5555
-// import minimist from 'minimist';
-
-//
-// const args = minimist(process.argv.slice(2))
-// let s=args.sides;
-// let d=args.dice;
-// let r=args.rolls;
-// const res = {sides: s, dice:d, rolls:roll(s,d,r)}
-// console.log(JSON.stringify(res))
+import minimist from 'minimist';
+const args = minimist(process.argv.slice(2))
+var port = 5000;
+if(args.port){
+    port = args.port
+}
 
 app.get('/app/', (req, res, next) => {
-    console.log("200 OK")
+    res.send("200 OK")
 })
 
 app.get('/app/roll/', (req, res, next) => {
