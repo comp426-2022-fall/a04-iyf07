@@ -36,4 +36,8 @@ app.get('*', (req, res) => {
     res.send("404 NOT FOUND");
 });
 
+app.post('/app/roll/', (req, res) => {
+    res.send(roll(req.body.sides, req.body.dice, req.body.rolls));
+});
+
 app.listen(port)
