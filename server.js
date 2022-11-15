@@ -13,7 +13,7 @@ const port = 5555
 // console.log(JSON.stringify(res))
 
 app.get('/app/', (req, res, next) => {
-    res.send("200 OK")
+    console.log("200 OK")
 })
 
 app.get('/app/roll/', (req, res, next) => {
@@ -36,6 +36,4 @@ app.get('*', (req, res) => {
     res.send("404 NOT FOUND");
 });
 
-app.listen(port, () => {
-    console.log("Server listening on port" + port)
-})
+app.listen(port)
