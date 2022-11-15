@@ -8,16 +8,16 @@ if(args.port){
     port = args.port
 }
 
+//Encoded URI
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
 app.get('/app/', (req, res, next) => {
     res.send("200 OK")
 })
 
 app.get('/app/roll/', (req, res, next) => {
     res.send(roll(-1,-1,-1))
-})
-
-app.get('/app/roll/?sides=:sides&dice=:dice&rolls=:rolls/', (req, res, next) => {
-    res.send(roll(parseInt(req.params.sides),parseInt(req.params.dice),parseInt(req.params.rolls)))
 })
 
 app.get('/app/roll/:sides/', (req, res, next) => {
