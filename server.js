@@ -37,7 +37,7 @@ app.get('*', (req, res) => {
 });
 
 app.post('/app/roll/', (req, res) => {
-    res.send(parseInt(req.body.sides),parseInt(req.body.dice),parseInt(req.body.rolls));
+    res.send(roll(parseInt(req.body.sides),parseInt(req.body.dice),parseInt(req.body.rolls)));
 });
 
 app.listen(port)
